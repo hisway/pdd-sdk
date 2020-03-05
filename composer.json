@@ -1,4 +1,13 @@
 {
+    "name": "hisway/pdd-sdk",
+    "description": "pdd-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hisway",
+            "email": "hisway@qq.com"
+        }
+    ],
     "require": {
         "php": "^5.5|^7.0",
         "ext-curl": "*",
