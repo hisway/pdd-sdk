@@ -11,10 +11,10 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddErpOrderSyncRequest();
 
+$request->setLogisticsId(1);
 $request->setOrderSn('str');
 $request->setOrderState(1);
 $request->setWaybillNo('str');
-$request->setLogisticsId(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

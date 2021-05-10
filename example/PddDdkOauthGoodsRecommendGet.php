@@ -11,11 +11,16 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOauthGoodsRecommendGetRequest();
 
-$request->setOffset(1);
-$request->setLimit(1);
+$request->setActivityTags(array(1));
+$request->setCatId(1);
 $request->setChannelType(1);
-$request->setPid('str');
 $request->setCustomParameters('str');
+$request->setForceAuthDuoId(true);
+$request->setGoodsSignList(array('str'));
+$request->setLimit(1);
+$request->setListId('str');
+$request->setOffset(1);
+$request->setPid('str');
 try{
 	$response = $client->syncInvoke($request, Config::$accessToken);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

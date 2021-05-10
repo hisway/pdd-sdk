@@ -60,6 +60,11 @@ class PddVasOrderSearchRequest extends PopBaseHttpRequest
 	*/
 	private $skuId;
 
+	/**
+	* @JsonProperty(Integer, "refund_status")
+	*/
+	private $refundStatus;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "create_time_end", $this->createTimeEnd);
@@ -72,6 +77,7 @@ class PddVasOrderSearchRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "pay_time_end", $this->payTimeEnd);
 		$this->setUserParam($params, "pay_time_start", $this->payTimeStart);
 		$this->setUserParam($params, "sku_id", $this->skuId);
+		$this->setUserParam($params, "refund_status", $this->refundStatus);
 
 	}
 
@@ -138,6 +144,11 @@ class PddVasOrderSearchRequest extends PopBaseHttpRequest
 	public function setSkuId($skuId)
 	{
 		$this->skuId = $skuId;
+	}
+
+	public function setRefundStatus($refundStatus)
+	{
+		$this->refundStatus = $refundStatus;
 	}
 
 }

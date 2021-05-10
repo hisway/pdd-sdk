@@ -16,8 +16,6 @@ $request->setGenerateWeApp(true);
 $request->setPid('str');
 $request->setResourceType(1);
 $request->setUrl('str');
-$request->setGenerateSchemaUrl(true);
-$request->setGenerateQqApp(true);
 try{
 	$response = $client->syncInvoke($request, Config::$accessToken);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

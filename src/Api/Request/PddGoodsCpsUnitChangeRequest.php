@@ -11,14 +11,9 @@ class PddGoodsCpsUnitChangeRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(Long, "goods_id")
+	* @JsonProperty(String, "coupon_end_time")
 	*/
-	private $goodsId;
-
-	/**
-	* @JsonProperty(Long, "rate")
-	*/
-	private $rate;
+	private $couponEndTime;
 
 	/**
 	* @JsonProperty(Long, "coupon_id")
@@ -26,24 +21,34 @@ class PddGoodsCpsUnitChangeRequest extends PopBaseHttpRequest
 	private $couponId;
 
 	/**
+	* @JsonProperty(String, "coupon_sn")
+	*/
+	private $couponSn;
+
+	/**
 	* @JsonProperty(String, "coupon_start_time")
 	*/
 	private $couponStartTime;
 
 	/**
-	* @JsonProperty(String, "coupon_end_time")
-	*/
-	private $couponEndTime;
-
-	/**
-	* @JsonProperty(Long, "discount")
+	* @JsonProperty(Integer, "discount")
 	*/
 	private $discount;
+
+	/**
+	* @JsonProperty(Long, "goods_id")
+	*/
+	private $goodsId;
 
 	/**
 	* @JsonProperty(Long, "init_quantity")
 	*/
 	private $initQuantity;
+
+	/**
+	* @JsonProperty(Integer, "rate")
+	*/
+	private $rate;
 
 	/**
 	* @JsonProperty(Long, "remain_quantity")
@@ -52,13 +57,14 @@ class PddGoodsCpsUnitChangeRequest extends PopBaseHttpRequest
 
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "goods_id", $this->goodsId);
-		$this->setUserParam($params, "rate", $this->rate);
-		$this->setUserParam($params, "coupon_id", $this->couponId);
-		$this->setUserParam($params, "coupon_start_time", $this->couponStartTime);
 		$this->setUserParam($params, "coupon_end_time", $this->couponEndTime);
+		$this->setUserParam($params, "coupon_id", $this->couponId);
+		$this->setUserParam($params, "coupon_sn", $this->couponSn);
+		$this->setUserParam($params, "coupon_start_time", $this->couponStartTime);
 		$this->setUserParam($params, "discount", $this->discount);
+		$this->setUserParam($params, "goods_id", $this->goodsId);
 		$this->setUserParam($params, "init_quantity", $this->initQuantity);
+		$this->setUserParam($params, "rate", $this->rate);
 		$this->setUserParam($params, "remain_quantity", $this->remainQuantity);
 
 	}
@@ -78,14 +84,9 @@ class PddGoodsCpsUnitChangeRequest extends PopBaseHttpRequest
 		return "pdd.goods.cps.unit.change";
 	}
 
-	public function setGoodsId($goodsId)
+	public function setCouponEndTime($couponEndTime)
 	{
-		$this->goodsId = $goodsId;
-	}
-
-	public function setRate($rate)
-	{
-		$this->rate = $rate;
+		$this->couponEndTime = $couponEndTime;
 	}
 
 	public function setCouponId($couponId)
@@ -93,14 +94,14 @@ class PddGoodsCpsUnitChangeRequest extends PopBaseHttpRequest
 		$this->couponId = $couponId;
 	}
 
+	public function setCouponSn($couponSn)
+	{
+		$this->couponSn = $couponSn;
+	}
+
 	public function setCouponStartTime($couponStartTime)
 	{
 		$this->couponStartTime = $couponStartTime;
-	}
-
-	public function setCouponEndTime($couponEndTime)
-	{
-		$this->couponEndTime = $couponEndTime;
 	}
 
 	public function setDiscount($discount)
@@ -108,9 +109,19 @@ class PddGoodsCpsUnitChangeRequest extends PopBaseHttpRequest
 		$this->discount = $discount;
 	}
 
+	public function setGoodsId($goodsId)
+	{
+		$this->goodsId = $goodsId;
+	}
+
 	public function setInitQuantity($initQuantity)
 	{
 		$this->initQuantity = $initQuantity;
+	}
+
+	public function setRate($rate)
+	{
+		$this->rate = $rate;
 	}
 
 	public function setRemainQuantity($remainQuantity)

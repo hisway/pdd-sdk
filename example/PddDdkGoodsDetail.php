@@ -11,12 +11,11 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkGoodsDetailRequest();
 
-$request->setGoodsIdList(array(1));
-$request->setPid('str');
 $request->setCustomParameters('str');
-$request->setZsDuoId(1);
-$request->setPlanType(1);
+$request->setGoodsSign('str');
+$request->setPid('str');
 $request->setSearchId('str');
+$request->setZsDuoId(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

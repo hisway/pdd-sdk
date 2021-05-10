@@ -11,6 +11,11 @@ class PddErpOrderSyncRequest extends PopBaseHttpRequest
 
 	}
 	/**
+	* @JsonProperty(Long, "logistics_id")
+	*/
+	private $logisticsId;
+
+	/**
 	* @JsonProperty(String, "order_sn")
 	*/
 	private $orderSn;
@@ -25,17 +30,12 @@ class PddErpOrderSyncRequest extends PopBaseHttpRequest
 	*/
 	private $waybillNo;
 
-	/**
-	* @JsonProperty(Long, "logistics_id")
-	*/
-	private $logisticsId;
-
 	protected function setUserParams(&$params)
 	{
+		$this->setUserParam($params, "logistics_id", $this->logisticsId);
 		$this->setUserParam($params, "order_sn", $this->orderSn);
 		$this->setUserParam($params, "order_state", $this->orderState);
 		$this->setUserParam($params, "waybill_no", $this->waybillNo);
-		$this->setUserParam($params, "logistics_id", $this->logisticsId);
 
 	}
 
@@ -54,6 +54,11 @@ class PddErpOrderSyncRequest extends PopBaseHttpRequest
 		return "pdd.erp.order.sync";
 	}
 
+	public function setLogisticsId($logisticsId)
+	{
+		$this->logisticsId = $logisticsId;
+	}
+
 	public function setOrderSn($orderSn)
 	{
 		$this->orderSn = $orderSn;
@@ -67,11 +72,6 @@ class PddErpOrderSyncRequest extends PopBaseHttpRequest
 	public function setWaybillNo($waybillNo)
 	{
 		$this->waybillNo = $waybillNo;
-	}
-
-	public function setLogisticsId($logisticsId)
-	{
-		$this->logisticsId = $logisticsId;
 	}
 
 }

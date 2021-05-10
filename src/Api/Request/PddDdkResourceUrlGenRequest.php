@@ -16,16 +16,6 @@ class PddDdkResourceUrlGenRequest extends PopBaseHttpRequest
 	private $customParameters;
 
 	/**
-	* @JsonProperty(Boolean, "generate_qq_app")
-	*/
-	private $generateQqApp;
-
-	/**
-	* @JsonProperty(Boolean, "generate_schema_url")
-	*/
-	private $generateSchemaUrl;
-
-	/**
 	* @JsonProperty(Boolean, "generate_we_app")
 	*/
 	private $generateWeApp;
@@ -48,8 +38,6 @@ class PddDdkResourceUrlGenRequest extends PopBaseHttpRequest
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
-		$this->setUserParam($params, "generate_qq_app", $this->generateQqApp);
-		$this->setUserParam($params, "generate_schema_url", $this->generateSchemaUrl);
 		$this->setUserParam($params, "generate_we_app", $this->generateWeApp);
 		$this->setUserParam($params, "pid", $this->pid);
 		$this->setUserParam($params, "resource_type", $this->resourceType);
@@ -75,16 +63,6 @@ class PddDdkResourceUrlGenRequest extends PopBaseHttpRequest
 	public function setCustomParameters($customParameters)
 	{
 		$this->customParameters = $customParameters;
-	}
-
-	public function setGenerateQqApp($generateQqApp)
-	{
-		$this->generateQqApp = $generateQqApp;
-	}
-
-	public function setGenerateSchemaUrl($generateSchemaUrl)
-	{
-		$this->generateSchemaUrl = $generateSchemaUrl;
 	}
 
 	public function setGenerateWeApp($generateWeApp)

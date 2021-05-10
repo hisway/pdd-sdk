@@ -11,6 +11,11 @@ class PddDdkOauthGoodsPidGenerateRequest extends PopBaseHttpRequest
 
 	}
 	/**
+	* @JsonProperty(Long, "media_id")
+	*/
+	private $mediaId;
+
+	/**
 	* @JsonProperty(Long, "number")
 	*/
 	private $number;
@@ -22,6 +27,7 @@ class PddDdkOauthGoodsPidGenerateRequest extends PopBaseHttpRequest
 
 	protected function setUserParams(&$params)
 	{
+		$this->setUserParam($params, "media_id", $this->mediaId);
 		$this->setUserParam($params, "number", $this->number);
 		$this->setUserParam($params, "p_id_name_list", $this->pIdNameList);
 
@@ -40,6 +46,11 @@ class PddDdkOauthGoodsPidGenerateRequest extends PopBaseHttpRequest
 	public function getType()
 	{
 		return "pdd.ddk.oauth.goods.pid.generate";
+	}
+
+	public function setMediaId($mediaId)
+	{
+		$this->mediaId = $mediaId;
 	}
 
 	public function setNumber($number)

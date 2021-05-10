@@ -85,6 +85,11 @@ class PddMallInfoStoreUpdatePostRequest extends PopBaseHttpRequest
 	*/
 	private $storePhone;
 
+	/**
+	* @JsonProperty(Integer, "trade_type")
+	*/
+	private $tradeType;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "business_status", $this->businessStatus);
@@ -102,6 +107,7 @@ class PddMallInfoStoreUpdatePostRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "store_name", $this->storeName);
 		$this->setUserParam($params, "store_number", $this->storeNumber);
 		$this->setUserParam($params, "store_phone", $this->storePhone);
+		$this->setUserParam($params, "trade_type", $this->tradeType);
 
 	}
 
@@ -193,6 +199,11 @@ class PddMallInfoStoreUpdatePostRequest extends PopBaseHttpRequest
 	public function setStorePhone($storePhone)
 	{
 		$this->storePhone = $storePhone;
+	}
+
+	public function setTradeType($tradeType)
+	{
+		$this->tradeType = $tradeType;
 	}
 
 }

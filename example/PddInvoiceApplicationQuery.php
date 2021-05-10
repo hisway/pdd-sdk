@@ -13,11 +13,12 @@ $request = new PddInvoiceApplicationQueryRequest();
 
 $request->setApplicationId(1);
 $request->setOrderSn('str');
-$request->setStatus(1);
-$request->setUpdateStartTime(1);
-$request->setUpdateEndTime(1);
 $request->setPage(1);
 $request->setPageSize(1);
+$request->setQualityGoodsInvoice(1);
+$request->setStatus(1);
+$request->setUpdateEndTime(1);
+$request->setUpdateStartTime(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

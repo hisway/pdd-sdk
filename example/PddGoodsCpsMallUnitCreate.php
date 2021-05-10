@@ -11,8 +11,8 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddGoodsCpsMallUnitCreateRequest();
 
-$request->setRate(1);
 $request->setErpCode('str');
+$request->setRate(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

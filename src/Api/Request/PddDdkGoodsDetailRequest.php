@@ -11,9 +11,14 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(List<Long>, "goods_id_list")
+	* @JsonProperty(String, "custom_parameters")
 	*/
-	private $goodsIdList;
+	private $customParameters;
+
+	/**
+	* @JsonProperty(String, "goods_sign")
+	*/
+	private $goodsSign;
 
 	/**
 	* @JsonProperty(String, "pid")
@@ -21,33 +26,22 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 	private $pid;
 
 	/**
-	* @JsonProperty(String, "custom_parameters")
+	* @JsonProperty(String, "search_id")
 	*/
-	private $customParameters;
+	private $searchId;
 
 	/**
 	* @JsonProperty(Long, "zs_duo_id")
 	*/
 	private $zsDuoId;
 
-	/**
-	* @JsonProperty(Integer, "plan_type")
-	*/
-	private $planType;
-
-	/**
-	* @JsonProperty(String, "search_id")
-	*/
-	private $searchId;
-
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "goods_id_list", $this->goodsIdList);
-		$this->setUserParam($params, "pid", $this->pid);
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
-		$this->setUserParam($params, "zs_duo_id", $this->zsDuoId);
-		$this->setUserParam($params, "plan_type", $this->planType);
+		$this->setUserParam($params, "goods_sign", $this->goodsSign);
+		$this->setUserParam($params, "pid", $this->pid);
 		$this->setUserParam($params, "search_id", $this->searchId);
+		$this->setUserParam($params, "zs_duo_id", $this->zsDuoId);
 
 	}
 
@@ -66,9 +60,14 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 		return "pdd.ddk.goods.detail";
 	}
 
-	public function setGoodsIdList($goodsIdList)
+	public function setCustomParameters($customParameters)
 	{
-		$this->goodsIdList = $goodsIdList;
+		$this->customParameters = $customParameters;
+	}
+
+	public function setGoodsSign($goodsSign)
+	{
+		$this->goodsSign = $goodsSign;
 	}
 
 	public function setPid($pid)
@@ -76,24 +75,14 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 		$this->pid = $pid;
 	}
 
-	public function setCustomParameters($customParameters)
+	public function setSearchId($searchId)
 	{
-		$this->customParameters = $customParameters;
+		$this->searchId = $searchId;
 	}
 
 	public function setZsDuoId($zsDuoId)
 	{
 		$this->zsDuoId = $zsDuoId;
-	}
-
-	public function setPlanType($planType)
-	{
-		$this->planType = $planType;
-	}
-
-	public function setSearchId($searchId)
-	{
-		$this->searchId = $searchId;
 	}
 
 }

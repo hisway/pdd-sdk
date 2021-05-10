@@ -17,6 +17,7 @@ $request->setTemplateParamJson();
 $request->setWaybillCodes(array('str'));
 $request->setWpCode('str');
 $request->setOutId('str');
+$request->setSmsUpExtendCode('str');
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

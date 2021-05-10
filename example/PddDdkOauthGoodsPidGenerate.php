@@ -11,6 +11,7 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOauthGoodsPidGenerateRequest();
 
+$request->setMediaId(1);
 $request->setNumber(1);
 $request->setPIdNameList(array('str'));
 try{

@@ -11,19 +11,21 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOauthGoodsPromUrlGenerateRequest();
 
-$request->setPId('str');
-$request->setGoodsIdList(array(1));
-$request->setGenerateShortUrl(true);
-$request->setMultiGroup(true);
+$request->setCashGiftId(1);
+$request->setCashGiftName('str');
 $request->setCustomParameters('str');
-$request->setGenerateWeappWebview(true);
-$request->setZsDuoId(1);
-$request->setGenerateWeApp(true);
-$request->setGenerateWeiboappWebview(true);
-$request->setGenerateSchemaUrl(true);
 $request->setForceDuoId(true);
+$request->setGenerateAuthorityUrl(true);
+$request->setGenerateMallCollectCoupon(true);
 $request->setGenerateQqApp(true);
+$request->setGenerateSchemaUrl(true);
+$request->setGenerateShortUrl(true);
+$request->setGenerateWeApp(true);
+$request->setGoodsSignList(array('str'));
+$request->setMultiGroup(true);
+$request->setPId('str');
 $request->setSearchId('str');
+$request->setZsDuoId(1);
 try{
 	$response = $client->syncInvoke($request, Config::$accessToken);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

@@ -11,11 +11,6 @@ class PddLogisticsTicketGetRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(Long, "start_updated_at")
-	*/
-	private $startUpdatedAt;
-
-	/**
 	* @JsonProperty(Long, "end_updated_at")
 	*/
 	private $endUpdatedAt;
@@ -30,12 +25,17 @@ class PddLogisticsTicketGetRequest extends PopBaseHttpRequest
 	*/
 	private $pageSize;
 
+	/**
+	* @JsonProperty(Long, "start_updated_at")
+	*/
+	private $startUpdatedAt;
+
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "start_updated_at", $this->startUpdatedAt);
 		$this->setUserParam($params, "end_updated_at", $this->endUpdatedAt);
 		$this->setUserParam($params, "page", $this->page);
 		$this->setUserParam($params, "page_size", $this->pageSize);
+		$this->setUserParam($params, "start_updated_at", $this->startUpdatedAt);
 
 	}
 
@@ -54,11 +54,6 @@ class PddLogisticsTicketGetRequest extends PopBaseHttpRequest
 		return "pdd.logistics.ticket.get";
 	}
 
-	public function setStartUpdatedAt($startUpdatedAt)
-	{
-		$this->startUpdatedAt = $startUpdatedAt;
-	}
-
 	public function setEndUpdatedAt($endUpdatedAt)
 	{
 		$this->endUpdatedAt = $endUpdatedAt;
@@ -72,6 +67,11 @@ class PddLogisticsTicketGetRequest extends PopBaseHttpRequest
 	public function setPageSize($pageSize)
 	{
 		$this->pageSize = $pageSize;
+	}
+
+	public function setStartUpdatedAt($startUpdatedAt)
+	{
+		$this->startUpdatedAt = $startUpdatedAt;
 	}
 
 }

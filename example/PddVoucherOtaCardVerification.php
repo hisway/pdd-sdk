@@ -14,6 +14,7 @@ $request = new PddVoucherOtaCardVerificationRequest();
 $request->setCardNo('str');
 $request->setStoreId(1);
 $request->setStoreName('str');
+$request->setOrderSn('str');
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

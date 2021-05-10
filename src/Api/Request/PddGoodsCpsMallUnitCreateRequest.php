@@ -11,19 +11,19 @@ class PddGoodsCpsMallUnitCreateRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(Long, "rate")
-	*/
-	private $rate;
-
-	/**
 	* @JsonProperty(String, "erp_code")
 	*/
 	private $erpCode;
 
+	/**
+	* @JsonProperty(Long, "rate")
+	*/
+	private $rate;
+
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "rate", $this->rate);
 		$this->setUserParam($params, "erp_code", $this->erpCode);
+		$this->setUserParam($params, "rate", $this->rate);
 
 	}
 
@@ -42,14 +42,14 @@ class PddGoodsCpsMallUnitCreateRequest extends PopBaseHttpRequest
 		return "pdd.goods.cps.mall.unit.create";
 	}
 
-	public function setRate($rate)
-	{
-		$this->rate = $rate;
-	}
-
 	public function setErpCode($erpCode)
 	{
 		$this->erpCode = $erpCode;
+	}
+
+	public function setRate($rate)
+	{
+		$this->rate = $rate;
 	}
 
 }

@@ -20,16 +20,10 @@ class PddLogisticsOrdertraceGetRequest extends PopBaseHttpRequest
 	*/
 	private $mailNo;
 
-	/**
-	* @JsonProperty(Boolean, "cache")
-	*/
-	private $cache;
-
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "company_code", $this->companyCode);
 		$this->setUserParam($params, "mail_no", $this->mailNo);
-		$this->setUserParam($params, "cache", $this->cache);
 
 	}
 
@@ -56,11 +50,6 @@ class PddLogisticsOrdertraceGetRequest extends PopBaseHttpRequest
 	public function setMailNo($mailNo)
 	{
 		$this->mailNo = $mailNo;
-	}
-
-	public function setCache($cache)
-	{
-		$this->cache = $cache;
 	}
 
 }

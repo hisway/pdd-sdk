@@ -13,6 +13,7 @@ $request = new PddDdkGoodsPidGenerateRequest();
 
 $request->setNumber(1);
 $request->setPIdNameList(array('str'));
+$request->setMediaId(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

@@ -16,6 +16,7 @@ $request->setSignName('str');
 $request->setTemplateCode(1);
 $request->setTemplateParam();
 $request->setOutId('str');
+$request->setSmsUpExtendCode('str');
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

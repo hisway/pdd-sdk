@@ -17,6 +17,7 @@ $request->setPageSize(1);
 $request->setParentVid(1);
 $request->setTemplatePid(1);
 $request->setValue('str');
+$request->setRefPid(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

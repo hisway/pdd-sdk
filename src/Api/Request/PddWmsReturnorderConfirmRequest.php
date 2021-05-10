@@ -96,6 +96,11 @@ class PddWmsReturnorderConfirmRequest_Request extends PopBaseJsonEntity
 	*/
 	private $warehouseCode;
 
+	/**
+	* @JsonProperty(String, "status")
+	*/
+	private $status;
+
 	public function setExpressCode($expressCode)
 	{
 		$this->expressCode = $expressCode;
@@ -139,6 +144,11 @@ class PddWmsReturnorderConfirmRequest_Request extends PopBaseJsonEntity
 	public function setWarehouseCode($warehouseCode)
 	{
 		$this->warehouseCode = $warehouseCode;
+	}
+
+	public function setStatus($status)
+	{
+		$this->status = $status;
 	}
 
 }

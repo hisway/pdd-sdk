@@ -21,21 +21,6 @@ class PddInvoiceApplicationQueryRequest extends PopBaseHttpRequest
 	private $orderSn;
 
 	/**
-	* @JsonProperty(Integer, "status")
-	*/
-	private $status;
-
-	/**
-	* @JsonProperty(Long, "update_start_time")
-	*/
-	private $updateStartTime;
-
-	/**
-	* @JsonProperty(Long, "update_end_time")
-	*/
-	private $updateEndTime;
-
-	/**
 	* @JsonProperty(Integer, "page")
 	*/
 	private $page;
@@ -45,15 +30,36 @@ class PddInvoiceApplicationQueryRequest extends PopBaseHttpRequest
 	*/
 	private $pageSize;
 
+	/**
+	* @JsonProperty(Integer, "quality_goods_invoice")
+	*/
+	private $qualityGoodsInvoice;
+
+	/**
+	* @JsonProperty(Integer, "status")
+	*/
+	private $status;
+
+	/**
+	* @JsonProperty(Long, "update_end_time")
+	*/
+	private $updateEndTime;
+
+	/**
+	* @JsonProperty(Long, "update_start_time")
+	*/
+	private $updateStartTime;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "application_id", $this->applicationId);
 		$this->setUserParam($params, "order_sn", $this->orderSn);
-		$this->setUserParam($params, "status", $this->status);
-		$this->setUserParam($params, "update_start_time", $this->updateStartTime);
-		$this->setUserParam($params, "update_end_time", $this->updateEndTime);
 		$this->setUserParam($params, "page", $this->page);
 		$this->setUserParam($params, "page_size", $this->pageSize);
+		$this->setUserParam($params, "quality_goods_invoice", $this->qualityGoodsInvoice);
+		$this->setUserParam($params, "status", $this->status);
+		$this->setUserParam($params, "update_end_time", $this->updateEndTime);
+		$this->setUserParam($params, "update_start_time", $this->updateStartTime);
 
 	}
 
@@ -82,21 +88,6 @@ class PddInvoiceApplicationQueryRequest extends PopBaseHttpRequest
 		$this->orderSn = $orderSn;
 	}
 
-	public function setStatus($status)
-	{
-		$this->status = $status;
-	}
-
-	public function setUpdateStartTime($updateStartTime)
-	{
-		$this->updateStartTime = $updateStartTime;
-	}
-
-	public function setUpdateEndTime($updateEndTime)
-	{
-		$this->updateEndTime = $updateEndTime;
-	}
-
 	public function setPage($page)
 	{
 		$this->page = $page;
@@ -105,6 +96,26 @@ class PddInvoiceApplicationQueryRequest extends PopBaseHttpRequest
 	public function setPageSize($pageSize)
 	{
 		$this->pageSize = $pageSize;
+	}
+
+	public function setQualityGoodsInvoice($qualityGoodsInvoice)
+	{
+		$this->qualityGoodsInvoice = $qualityGoodsInvoice;
+	}
+
+	public function setStatus($status)
+	{
+		$this->status = $status;
+	}
+
+	public function setUpdateEndTime($updateEndTime)
+	{
+		$this->updateEndTime = $updateEndTime;
+	}
+
+	public function setUpdateStartTime($updateStartTime)
+	{
+		$this->updateStartTime = $updateStartTime;
 	}
 
 }

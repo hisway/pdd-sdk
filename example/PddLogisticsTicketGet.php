@@ -11,10 +11,10 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddLogisticsTicketGetRequest();
 
-$request->setStartUpdatedAt(1);
 $request->setEndUpdatedAt(1);
 $request->setPage(1);
 $request->setPageSize(1);
+$request->setStartUpdatedAt(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

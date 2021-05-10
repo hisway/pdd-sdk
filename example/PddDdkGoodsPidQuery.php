@@ -14,6 +14,7 @@ $request = new PddDdkGoodsPidQueryRequest();
 $request->setPage(1);
 $request->setPageSize(1);
 $request->setPidList(array('str'));
+$request->setStatus(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

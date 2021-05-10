@@ -11,21 +11,24 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkGoodsSearchRequest();
 
+$request->setActivityTags(array(1));
+$request->setBlockCats(array(1));
+$request->setBlockCatPackages(array(1));
+$request->setCatId(1);
+$request->setCustomParameters('str');
+$request->setGoodsSignList(array('str'));
+$request->setIsBrandGoods(true);
 $request->setKeyword('str');
+$request->setListId('str');
+$request->setMerchantType(1);
+$request->setMerchantTypeList(array(1));
 $request->setOptId(1);
 $request->setPage(1);
 $request->setPageSize(1);
+$request->setPid('str');
+$request->setRangeList();
 $request->setSortType(1);
 $request->setWithCoupon(true);
-$request->setRangeList('str');
-$request->setCatId(1);
-$request->setGoodsIdList(array(1));
-$request->setMerchantType(1);
-$request->setPid('str');
-$request->setCustomParameters('str');
-$request->setMerchantTypeList(array(1));
-$request->setIsBrandGoods(true);
-$request->setActivityTags(array(1));
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

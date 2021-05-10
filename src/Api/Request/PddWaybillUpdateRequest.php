@@ -137,12 +137,12 @@ class PddWaybillUpdateRequest_ParamWaybillCloudPrintUpdateRequestPackageInfo ext
 	private $items;
 
 	/**
-	* @JsonProperty(Long, "volume")
+	* @JsonProperty(Integer, "volume")
 	*/
 	private $volume;
 
 	/**
-	* @JsonProperty(Long, "weight")
+	* @JsonProperty(Integer, "weight")
 	*/
 	private $weight;
 
@@ -257,6 +257,11 @@ class PddWaybillUpdateRequest_ParamWaybillCloudPrintUpdateRequestRecipientAddres
 	private $city;
 
 	/**
+	* @JsonProperty(String, "country")
+	*/
+	private $country;
+
+	/**
 	* @JsonProperty(String, "detail")
 	*/
 	private $detail;
@@ -276,14 +281,14 @@ class PddWaybillUpdateRequest_ParamWaybillCloudPrintUpdateRequestRecipientAddres
 	*/
 	private $town;
 
-	/**
-	* @JsonProperty(String, "country")
-	*/
-	private $country;
-
 	public function setCity($city)
 	{
 		$this->city = $city;
+	}
+
+	public function setCountry($country)
+	{
+		$this->country = $country;
 	}
 
 	public function setDetail($detail)
@@ -304,11 +309,6 @@ class PddWaybillUpdateRequest_ParamWaybillCloudPrintUpdateRequestRecipientAddres
 	public function setTown($town)
 	{
 		$this->town = $town;
-	}
-
-	public function setCountry($country)
-	{
-		$this->country = $country;
 	}
 
 }

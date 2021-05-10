@@ -11,9 +11,10 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOauthGoodsZsUnitUrlGenRequest();
 
-$request->setSourceUrl('str');
+$request->setCustomParameters('str');
+$request->setGenerateSchemaUrl(true);
 $request->setPid('str');
-$request->setGenerateSchemaUrl('str');
+$request->setSourceUrl('str');
 try{
 	$response = $client->syncInvoke($request, Config::$accessToken);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

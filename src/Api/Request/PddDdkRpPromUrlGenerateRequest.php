@@ -11,6 +11,11 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 
 	}
 	/**
+	* @JsonProperty(Long, "amount")
+	*/
+	private $amount;
+
+	/**
 	* @JsonProperty(Integer, "channel_type")
 	*/
 	private $channelType;
@@ -19,6 +24,16 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	* @JsonProperty(String, "custom_parameters")
 	*/
 	private $customParameters;
+
+	/**
+	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyLotteryParam, "diy_lottery_param")
+	*/
+	private $diyLotteryParam;
+
+	/**
+	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyRedPacketParam, "diy_red_packet_param")
+	*/
+	private $diyRedPacketParam;
 
 	/**
 	* @JsonProperty(Boolean, "generate_qq_app")
@@ -36,11 +51,6 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	private $generateShortUrl;
 
 	/**
-	* @JsonProperty(Boolean, "generate_weapp_webview")
-	*/
-	private $generateWeappWebview;
-
-	/**
 	* @JsonProperty(Boolean, "generate_we_app")
 	*/
 	private $generateWeApp;
@@ -51,39 +61,23 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	private $pIdList;
 
 	/**
-	* @JsonProperty(Boolean, "we_app_web_view_short_url")
+	* @JsonProperty(Long, "scratch_card_amount")
 	*/
-	private $weAppWebViewShortUrl;
-
-	/**
-	* @JsonProperty(Boolean, "we_app_web_wiew_url")
-	*/
-	private $weAppWebWiewUrl;
-
-	/**
-	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyLotteryParam, "diy_lottery_param")
-	*/
-	private $diyLotteryParam;
-
-	/**
-	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyRedPacketParam, "diy_red_packet_param")
-	*/
-	private $diyRedPacketParam;
+	private $scratchCardAmount;
 
 	protected function setUserParams(&$params)
 	{
+		$this->setUserParam($params, "amount", $this->amount);
 		$this->setUserParam($params, "channel_type", $this->channelType);
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
+		$this->setUserParam($params, "diy_lottery_param", $this->diyLotteryParam);
+		$this->setUserParam($params, "diy_red_packet_param", $this->diyRedPacketParam);
 		$this->setUserParam($params, "generate_qq_app", $this->generateQqApp);
 		$this->setUserParam($params, "generate_schema_url", $this->generateSchemaUrl);
 		$this->setUserParam($params, "generate_short_url", $this->generateShortUrl);
-		$this->setUserParam($params, "generate_weapp_webview", $this->generateWeappWebview);
 		$this->setUserParam($params, "generate_we_app", $this->generateWeApp);
 		$this->setUserParam($params, "p_id_list", $this->pIdList);
-		$this->setUserParam($params, "we_app_web_view_short_url", $this->weAppWebViewShortUrl);
-		$this->setUserParam($params, "we_app_web_wiew_url", $this->weAppWebWiewUrl);
-		$this->setUserParam($params, "diy_lottery_param", $this->diyLotteryParam);
-		$this->setUserParam($params, "diy_red_packet_param", $this->diyRedPacketParam);
+		$this->setUserParam($params, "scratch_card_amount", $this->scratchCardAmount);
 
 	}
 
@@ -102,6 +96,11 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 		return "pdd.ddk.rp.prom.url.generate";
 	}
 
+	public function setAmount($amount)
+	{
+		$this->amount = $amount;
+	}
+
 	public function setChannelType($channelType)
 	{
 		$this->channelType = $channelType;
@@ -110,6 +109,16 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	public function setCustomParameters($customParameters)
 	{
 		$this->customParameters = $customParameters;
+	}
+
+	public function setDiyLotteryParam($diyLotteryParam)
+	{
+		$this->diyLotteryParam = $diyLotteryParam;
+	}
+
+	public function setDiyRedPacketParam($diyRedPacketParam)
+	{
+		$this->diyRedPacketParam = $diyRedPacketParam;
 	}
 
 	public function setGenerateQqApp($generateQqApp)
@@ -127,11 +136,6 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 		$this->generateShortUrl = $generateShortUrl;
 	}
 
-	public function setGenerateWeappWebview($generateWeappWebview)
-	{
-		$this->generateWeappWebview = $generateWeappWebview;
-	}
-
 	public function setGenerateWeApp($generateWeApp)
 	{
 		$this->generateWeApp = $generateWeApp;
@@ -142,24 +146,9 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 		$this->pIdList = $pIdList;
 	}
 
-	public function setWeAppWebViewShortUrl($weAppWebViewShortUrl)
+	public function setScratchCardAmount($scratchCardAmount)
 	{
-		$this->weAppWebViewShortUrl = $weAppWebViewShortUrl;
-	}
-
-	public function setWeAppWebWiewUrl($weAppWebWiewUrl)
-	{
-		$this->weAppWebWiewUrl = $weAppWebWiewUrl;
-	}
-
-	public function setDiyLotteryParam($diyLotteryParam)
-	{
-		$this->diyLotteryParam = $diyLotteryParam;
-	}
-
-	public function setDiyRedPacketParam($diyRedPacketParam)
-	{
-		$this->diyRedPacketParam = $diyRedPacketParam;
+		$this->scratchCardAmount = $scratchCardAmount;
 	}
 
 }
@@ -178,7 +167,7 @@ class PddDdkRpPromUrlGenerateRequest_DiyLotteryParam extends PopBaseJsonEntity
 	private $optId;
 
 	/**
-	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyLotteryParamRangeItems, "range_items")
+	* @JsonProperty(List<\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyLotteryParamRangeItemsItem>, "range_items")
 	*/
 	private $rangeItems;
 
@@ -194,7 +183,7 @@ class PddDdkRpPromUrlGenerateRequest_DiyLotteryParam extends PopBaseJsonEntity
 
 }
 
-class PddDdkRpPromUrlGenerateRequest_DiyLotteryParamRangeItems extends PopBaseJsonEntity
+class PddDdkRpPromUrlGenerateRequest_DiyLotteryParamRangeItemsItem extends PopBaseJsonEntity
 {
 
 	public function __construct()

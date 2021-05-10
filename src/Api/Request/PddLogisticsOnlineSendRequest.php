@@ -35,6 +35,11 @@ class PddLogisticsOnlineSendRequest extends PopBaseHttpRequest
 	*/
 	private $trackingNumber;
 
+	/**
+	* @JsonProperty(Integer, "redelivery_type")
+	*/
+	private $redeliveryType;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "feature", $this->feature);
@@ -42,6 +47,7 @@ class PddLogisticsOnlineSendRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "order_sn", $this->orderSn);
 		$this->setUserParam($params, "refund_address_id", $this->refundAddressId);
 		$this->setUserParam($params, "tracking_number", $this->trackingNumber);
+		$this->setUserParam($params, "redelivery_type", $this->redeliveryType);
 
 	}
 
@@ -83,6 +89,11 @@ class PddLogisticsOnlineSendRequest extends PopBaseHttpRequest
 	public function setTrackingNumber($trackingNumber)
 	{
 		$this->trackingNumber = $trackingNumber;
+	}
+
+	public function setRedeliveryType($redeliveryType)
+	{
+		$this->redeliveryType = $redeliveryType;
 	}
 
 }

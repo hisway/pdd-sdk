@@ -250,6 +250,16 @@ class PddTrainCallbackChangeReserveRequest_NewPassengersItem extends PopBaseJson
 	}
 
 	/**
+	* @JsonProperty(Long, "change_pay")
+	*/
+	private $changePay;
+
+	/**
+	* @JsonProperty(Long, "change_refund")
+	*/
+	private $changeRefund;
+
+	/**
 	* @JsonProperty(String, "coach_name")
 	*/
 	private $coachName;
@@ -303,6 +313,16 @@ class PddTrainCallbackChangeReserveRequest_NewPassengersItem extends PopBaseJson
 	* @JsonProperty(Long, "ticket_price")
 	*/
 	private $ticketPrice;
+
+	public function setChangePay($changePay)
+	{
+		$this->changePay = $changePay;
+	}
+
+	public function setChangeRefund($changeRefund)
+	{
+		$this->changeRefund = $changeRefund;
+	}
 
 	public function setCoachName($coachName)
 	{

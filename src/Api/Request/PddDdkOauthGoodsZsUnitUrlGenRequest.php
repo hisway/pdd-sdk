@@ -11,9 +11,14 @@ class PddDdkOauthGoodsZsUnitUrlGenRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(String, "source_url")
+	* @JsonProperty(String, "custom_parameters")
 	*/
-	private $sourceUrl;
+	private $customParameters;
+
+	/**
+	* @JsonProperty(Boolean, "generate_schema_url")
+	*/
+	private $generateSchemaUrl;
 
 	/**
 	* @JsonProperty(String, "pid")
@@ -21,15 +26,16 @@ class PddDdkOauthGoodsZsUnitUrlGenRequest extends PopBaseHttpRequest
 	private $pid;
 
 	/**
-	* @JsonProperty(String, "generate_schema_url")
+	* @JsonProperty(String, "source_url")
 	*/
-	private $generateSchemaUrl;
+	private $sourceUrl;
 
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "source_url", $this->sourceUrl);
-		$this->setUserParam($params, "pid", $this->pid);
+		$this->setUserParam($params, "custom_parameters", $this->customParameters);
 		$this->setUserParam($params, "generate_schema_url", $this->generateSchemaUrl);
+		$this->setUserParam($params, "pid", $this->pid);
+		$this->setUserParam($params, "source_url", $this->sourceUrl);
 
 	}
 
@@ -48,9 +54,14 @@ class PddDdkOauthGoodsZsUnitUrlGenRequest extends PopBaseHttpRequest
 		return "pdd.ddk.oauth.goods.zs.unit.url.gen";
 	}
 
-	public function setSourceUrl($sourceUrl)
+	public function setCustomParameters($customParameters)
 	{
-		$this->sourceUrl = $sourceUrl;
+		$this->customParameters = $customParameters;
+	}
+
+	public function setGenerateSchemaUrl($generateSchemaUrl)
+	{
+		$this->generateSchemaUrl = $generateSchemaUrl;
 	}
 
 	public function setPid($pid)
@@ -58,9 +69,9 @@ class PddDdkOauthGoodsZsUnitUrlGenRequest extends PopBaseHttpRequest
 		$this->pid = $pid;
 	}
 
-	public function setGenerateSchemaUrl($generateSchemaUrl)
+	public function setSourceUrl($sourceUrl)
 	{
-		$this->generateSchemaUrl = $generateSchemaUrl;
+		$this->sourceUrl = $sourceUrl;
 	}
 
 }

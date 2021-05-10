@@ -40,6 +40,11 @@ class PddOpenMsgServiceSendExpressMsgRequest extends PopBaseHttpRequest
 	*/
 	private $outId;
 
+	/**
+	* @JsonProperty(String, "sms_up_extend_code")
+	*/
+	private $smsUpExtendCode;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "sign_name", $this->signName);
@@ -48,6 +53,7 @@ class PddOpenMsgServiceSendExpressMsgRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "waybill_codes", $this->waybillCodes);
 		$this->setUserParam($params, "wp_code", $this->wpCode);
 		$this->setUserParam($params, "out_id", $this->outId);
+		$this->setUserParam($params, "sms_up_extend_code", $this->smsUpExtendCode);
 
 	}
 
@@ -94,6 +100,11 @@ class PddOpenMsgServiceSendExpressMsgRequest extends PopBaseHttpRequest
 	public function setOutId($outId)
 	{
 		$this->outId = $outId;
+	}
+
+	public function setSmsUpExtendCode($smsUpExtendCode)
+	{
+		$this->smsUpExtendCode = $smsUpExtendCode;
 	}
 
 }

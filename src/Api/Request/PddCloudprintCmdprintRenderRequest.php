@@ -81,6 +81,11 @@ class PddCloudprintCmdprintRenderRequest_Request extends PopBaseJsonEntity
 	*/
 	private $printCommandType;
 
+	/**
+	* @JsonProperty(String, "cmd_encoding")
+	*/
+	private $cmdEncoding;
+
 	public function setClientSideId($clientSideId)
 	{
 		$this->clientSideId = $clientSideId;
@@ -109,6 +114,11 @@ class PddCloudprintCmdprintRenderRequest_Request extends PopBaseJsonEntity
 	public function setPrintCommandType($printCommandType)
 	{
 		$this->printCommandType = $printCommandType;
+	}
+
+	public function setCmdEncoding($cmdEncoding)
+	{
+		$this->cmdEncoding = $cmdEncoding;
 	}
 
 }

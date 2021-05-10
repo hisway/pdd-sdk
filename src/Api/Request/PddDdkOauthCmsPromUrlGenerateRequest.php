@@ -11,24 +11,9 @@ class PddDdkOauthCmsPromUrlGenerateRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(Boolean, "generate_short_url")
+	* @JsonProperty(Integer, "channel_type")
 	*/
-	private $generateShortUrl;
-
-	/**
-	* @JsonProperty(List<String>, "p_id_list")
-	*/
-	private $pIdList;
-
-	/**
-	* @JsonProperty(Boolean, "generate_mobile")
-	*/
-	private $generateMobile;
-
-	/**
-	* @JsonProperty(Boolean, "multi_group")
-	*/
-	private $multiGroup;
+	private $channelType;
 
 	/**
 	* @JsonProperty(String, "custom_parameters")
@@ -36,42 +21,51 @@ class PddDdkOauthCmsPromUrlGenerateRequest extends PopBaseHttpRequest
 	private $customParameters;
 
 	/**
-	* @JsonProperty(Boolean, "generate_weapp_webview")
+	* @JsonProperty(Boolean, "generate_mobile")
 	*/
-	private $generateWeappWebview;
+	private $generateMobile;
 
 	/**
-	* @JsonProperty(Boolean, "we_app_web_view_short_url")
-	*/
-	private $weAppWebViewShortUrl;
-
-	/**
-	* @JsonProperty(Boolean, "we_app_web_wiew_url")
-	*/
-	private $weAppWebWiewUrl;
-
-	/**
-	* @JsonProperty(Integer, "channel_type")
-	*/
-	private $channelType;
-
-	/**
-	* @JsonProperty(String, "generate_schema_url")
+	* @JsonProperty(Boolean, "generate_schema_url")
 	*/
 	private $generateSchemaUrl;
 
+	/**
+	* @JsonProperty(Boolean, "generate_short_url")
+	*/
+	private $generateShortUrl;
+
+	/**
+	* @JsonProperty(Boolean, "generate_we_app")
+	*/
+	private $generateWeApp;
+
+	/**
+	* @JsonProperty(String, "keyword")
+	*/
+	private $keyword;
+
+	/**
+	* @JsonProperty(Boolean, "multi_group")
+	*/
+	private $multiGroup;
+
+	/**
+	* @JsonProperty(List<String>, "p_id_list")
+	*/
+	private $pIdList;
+
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "generate_short_url", $this->generateShortUrl);
-		$this->setUserParam($params, "p_id_list", $this->pIdList);
-		$this->setUserParam($params, "generate_mobile", $this->generateMobile);
-		$this->setUserParam($params, "multi_group", $this->multiGroup);
-		$this->setUserParam($params, "custom_parameters", $this->customParameters);
-		$this->setUserParam($params, "generate_weapp_webview", $this->generateWeappWebview);
-		$this->setUserParam($params, "we_app_web_view_short_url", $this->weAppWebViewShortUrl);
-		$this->setUserParam($params, "we_app_web_wiew_url", $this->weAppWebWiewUrl);
 		$this->setUserParam($params, "channel_type", $this->channelType);
+		$this->setUserParam($params, "custom_parameters", $this->customParameters);
+		$this->setUserParam($params, "generate_mobile", $this->generateMobile);
 		$this->setUserParam($params, "generate_schema_url", $this->generateSchemaUrl);
+		$this->setUserParam($params, "generate_short_url", $this->generateShortUrl);
+		$this->setUserParam($params, "generate_we_app", $this->generateWeApp);
+		$this->setUserParam($params, "keyword", $this->keyword);
+		$this->setUserParam($params, "multi_group", $this->multiGroup);
+		$this->setUserParam($params, "p_id_list", $this->pIdList);
 
 	}
 
@@ -90,24 +84,9 @@ class PddDdkOauthCmsPromUrlGenerateRequest extends PopBaseHttpRequest
 		return "pdd.ddk.oauth.cms.prom.url.generate";
 	}
 
-	public function setGenerateShortUrl($generateShortUrl)
+	public function setChannelType($channelType)
 	{
-		$this->generateShortUrl = $generateShortUrl;
-	}
-
-	public function setPIdList($pIdList)
-	{
-		$this->pIdList = $pIdList;
-	}
-
-	public function setGenerateMobile($generateMobile)
-	{
-		$this->generateMobile = $generateMobile;
-	}
-
-	public function setMultiGroup($multiGroup)
-	{
-		$this->multiGroup = $multiGroup;
+		$this->channelType = $channelType;
 	}
 
 	public function setCustomParameters($customParameters)
@@ -115,29 +94,39 @@ class PddDdkOauthCmsPromUrlGenerateRequest extends PopBaseHttpRequest
 		$this->customParameters = $customParameters;
 	}
 
-	public function setGenerateWeappWebview($generateWeappWebview)
+	public function setGenerateMobile($generateMobile)
 	{
-		$this->generateWeappWebview = $generateWeappWebview;
-	}
-
-	public function setWeAppWebViewShortUrl($weAppWebViewShortUrl)
-	{
-		$this->weAppWebViewShortUrl = $weAppWebViewShortUrl;
-	}
-
-	public function setWeAppWebWiewUrl($weAppWebWiewUrl)
-	{
-		$this->weAppWebWiewUrl = $weAppWebWiewUrl;
-	}
-
-	public function setChannelType($channelType)
-	{
-		$this->channelType = $channelType;
+		$this->generateMobile = $generateMobile;
 	}
 
 	public function setGenerateSchemaUrl($generateSchemaUrl)
 	{
 		$this->generateSchemaUrl = $generateSchemaUrl;
+	}
+
+	public function setGenerateShortUrl($generateShortUrl)
+	{
+		$this->generateShortUrl = $generateShortUrl;
+	}
+
+	public function setGenerateWeApp($generateWeApp)
+	{
+		$this->generateWeApp = $generateWeApp;
+	}
+
+	public function setKeyword($keyword)
+	{
+		$this->keyword = $keyword;
+	}
+
+	public function setMultiGroup($multiGroup)
+	{
+		$this->multiGroup = $multiGroup;
+	}
+
+	public function setPIdList($pIdList)
+	{
+		$this->pIdList = $pIdList;
 	}
 
 }

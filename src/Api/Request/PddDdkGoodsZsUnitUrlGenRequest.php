@@ -11,19 +11,25 @@ class PddDdkGoodsZsUnitUrlGenRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(String, "source_url")
+	* @JsonProperty(String, "custom_parameters")
 	*/
-	private $sourceUrl;
+	private $customParameters;
 
 	/**
 	* @JsonProperty(String, "pid")
 	*/
 	private $pid;
 
+	/**
+	* @JsonProperty(String, "source_url")
+	*/
+	private $sourceUrl;
+
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "source_url", $this->sourceUrl);
+		$this->setUserParam($params, "custom_parameters", $this->customParameters);
 		$this->setUserParam($params, "pid", $this->pid);
+		$this->setUserParam($params, "source_url", $this->sourceUrl);
 
 	}
 
@@ -42,14 +48,19 @@ class PddDdkGoodsZsUnitUrlGenRequest extends PopBaseHttpRequest
 		return "pdd.ddk.goods.zs.unit.url.gen";
 	}
 
-	public function setSourceUrl($sourceUrl)
+	public function setCustomParameters($customParameters)
 	{
-		$this->sourceUrl = $sourceUrl;
+		$this->customParameters = $customParameters;
 	}
 
 	public function setPid($pid)
 	{
 		$this->pid = $pid;
+	}
+
+	public function setSourceUrl($sourceUrl)
+	{
+		$this->sourceUrl = $sourceUrl;
 	}
 
 }

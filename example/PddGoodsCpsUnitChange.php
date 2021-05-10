@@ -11,13 +11,14 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddGoodsCpsUnitChangeRequest();
 
-$request->setGoodsId(1);
-$request->setRate(1);
-$request->setCouponId(1);
-$request->setCouponStartTime('str');
 $request->setCouponEndTime('str');
+$request->setCouponId(1);
+$request->setCouponSn('str');
+$request->setCouponStartTime('str');
 $request->setDiscount(1);
+$request->setGoodsId(1);
 $request->setInitQuantity(1);
+$request->setRate(1);
 $request->setRemainQuantity(1);
 try{
 	$response = $client->syncInvoke($request);

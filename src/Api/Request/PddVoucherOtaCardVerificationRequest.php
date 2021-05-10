@@ -25,11 +25,17 @@ class PddVoucherOtaCardVerificationRequest extends PopBaseHttpRequest
 	*/
 	private $storeName;
 
+	/**
+	* @JsonProperty(String, "order_sn")
+	*/
+	private $orderSn;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "card_no", $this->cardNo);
 		$this->setUserParam($params, "store_id", $this->storeId);
 		$this->setUserParam($params, "store_name", $this->storeName);
+		$this->setUserParam($params, "order_sn", $this->orderSn);
 
 	}
 
@@ -61,6 +67,11 @@ class PddVoucherOtaCardVerificationRequest extends PopBaseHttpRequest
 	public function setStoreName($storeName)
 	{
 		$this->storeName = $storeName;
+	}
+
+	public function setOrderSn($orderSn)
+	{
+		$this->orderSn = $orderSn;
 	}
 
 }

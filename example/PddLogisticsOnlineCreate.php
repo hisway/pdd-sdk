@@ -11,14 +11,14 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddLogisticsOnlineCreateRequest();
 
-$request->setTrackingNumber('str');
-$request->setShippingId(1);
-$request->setReturnId('str');
-$request->setDeliveryPhone('str');
-$request->setDeliveryName('str');
 $request->setDeliveryAddress('str');
 $request->setDeliveryId('str');
+$request->setDeliveryName('str');
+$request->setDeliveryPhone('str');
 $request->setOrderSn('str');
+$request->setReturnId('str');
+$request->setShippingId(1);
+$request->setTrackingNumber('str');
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

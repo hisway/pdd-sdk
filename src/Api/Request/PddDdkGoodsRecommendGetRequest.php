@@ -11,14 +11,14 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(Integer, "offset")
+	* @JsonProperty(List<Integer>, "activity_tags")
 	*/
-	private $offset;
+	private $activityTags;
 
 	/**
-	* @JsonProperty(Integer, "limit")
+	* @JsonProperty(Long, "cat_id")
 	*/
-	private $limit;
+	private $catId;
 
 	/**
 	* @JsonProperty(Integer, "channel_type")
@@ -26,22 +26,46 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 	private $channelType;
 
 	/**
-	* @JsonProperty(String, "pid")
-	*/
-	private $pid;
-
-	/**
 	* @JsonProperty(String, "custom_parameters")
 	*/
 	private $customParameters;
 
+	/**
+	* @JsonProperty(List<String>, "goods_sign_list")
+	*/
+	private $goodsSignList;
+
+	/**
+	* @JsonProperty(Integer, "limit")
+	*/
+	private $limit;
+
+	/**
+	* @JsonProperty(String, "list_id")
+	*/
+	private $listId;
+
+	/**
+	* @JsonProperty(Integer, "offset")
+	*/
+	private $offset;
+
+	/**
+	* @JsonProperty(String, "pid")
+	*/
+	private $pid;
+
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "offset", $this->offset);
-		$this->setUserParam($params, "limit", $this->limit);
+		$this->setUserParam($params, "activity_tags", $this->activityTags);
+		$this->setUserParam($params, "cat_id", $this->catId);
 		$this->setUserParam($params, "channel_type", $this->channelType);
-		$this->setUserParam($params, "pid", $this->pid);
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
+		$this->setUserParam($params, "goods_sign_list", $this->goodsSignList);
+		$this->setUserParam($params, "limit", $this->limit);
+		$this->setUserParam($params, "list_id", $this->listId);
+		$this->setUserParam($params, "offset", $this->offset);
+		$this->setUserParam($params, "pid", $this->pid);
 
 	}
 
@@ -60,14 +84,14 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 		return "pdd.ddk.goods.recommend.get";
 	}
 
-	public function setOffset($offset)
+	public function setActivityTags($activityTags)
 	{
-		$this->offset = $offset;
+		$this->activityTags = $activityTags;
 	}
 
-	public function setLimit($limit)
+	public function setCatId($catId)
 	{
-		$this->limit = $limit;
+		$this->catId = $catId;
 	}
 
 	public function setChannelType($channelType)
@@ -75,14 +99,34 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 		$this->channelType = $channelType;
 	}
 
-	public function setPid($pid)
-	{
-		$this->pid = $pid;
-	}
-
 	public function setCustomParameters($customParameters)
 	{
 		$this->customParameters = $customParameters;
+	}
+
+	public function setGoodsSignList($goodsSignList)
+	{
+		$this->goodsSignList = $goodsSignList;
+	}
+
+	public function setLimit($limit)
+	{
+		$this->limit = $limit;
+	}
+
+	public function setListId($listId)
+	{
+		$this->listId = $listId;
+	}
+
+	public function setOffset($offset)
+	{
+		$this->offset = $offset;
+	}
+
+	public function setPid($pid)
+	{
+		$this->pid = $pid;
 	}
 
 }

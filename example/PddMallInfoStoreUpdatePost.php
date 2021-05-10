@@ -26,6 +26,7 @@ $request->setStoreId(1);
 $request->setStoreName('str');
 $request->setStoreNumber('str');
 $request->setStorePhone('str');
+$request->setTradeType(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

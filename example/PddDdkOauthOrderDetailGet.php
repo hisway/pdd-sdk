@@ -12,6 +12,7 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 $request = new PddDdkOauthOrderDetailGetRequest();
 
 $request->setOrderSn('str');
+$request->setQueryOrderType(1);
 try{
 	$response = $client->syncInvoke($request, Config::$accessToken);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

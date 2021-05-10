@@ -13,7 +13,6 @@ $request = new PddLogisticsOrdertraceGetRequest();
 
 $request->setCompanyCode('str');
 $request->setMailNo('str');
-$request->setCache(true);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

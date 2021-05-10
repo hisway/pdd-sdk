@@ -11,16 +11,15 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOauthCmsPromUrlGenerateRequest();
 
-$request->setGenerateShortUrl(true);
-$request->setPIdList(array('str'));
-$request->setGenerateMobile(true);
-$request->setMultiGroup(true);
-$request->setCustomParameters('str');
-$request->setGenerateWeappWebview(true);
-$request->setWeAppWebViewShortUrl(true);
-$request->setWeAppWebWiewUrl(true);
 $request->setChannelType(1);
-$request->setGenerateSchemaUrl('str');
+$request->setCustomParameters('str');
+$request->setGenerateMobile(true);
+$request->setGenerateSchemaUrl(true);
+$request->setGenerateShortUrl(true);
+$request->setGenerateWeApp(true);
+$request->setKeyword('str');
+$request->setMultiGroup(true);
+$request->setPIdList(array('str'));
 try{
 	$response = $client->syncInvoke($request, Config::$accessToken);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

@@ -11,14 +11,14 @@ class PddDdkAllOrderListIncrementGetRequest extends PopBaseHttpRequest
 
 	}
 	/**
-	* @JsonProperty(Long, "start_update_time")
-	*/
-	private $startUpdateTime;
-
-	/**
 	* @JsonProperty(Long, "end_update_time")
 	*/
 	private $endUpdateTime;
+
+	/**
+	* @JsonProperty(Integer, "page")
+	*/
+	private $page;
 
 	/**
 	* @JsonProperty(Integer, "page_size")
@@ -26,16 +26,22 @@ class PddDdkAllOrderListIncrementGetRequest extends PopBaseHttpRequest
 	private $pageSize;
 
 	/**
-	* @JsonProperty(Integer, "page")
+	* @JsonProperty(Integer, "query_order_type")
 	*/
-	private $page;
+	private $queryOrderType;
+
+	/**
+	* @JsonProperty(Long, "start_update_time")
+	*/
+	private $startUpdateTime;
 
 	protected function setUserParams(&$params)
 	{
-		$this->setUserParam($params, "start_update_time", $this->startUpdateTime);
 		$this->setUserParam($params, "end_update_time", $this->endUpdateTime);
-		$this->setUserParam($params, "page_size", $this->pageSize);
 		$this->setUserParam($params, "page", $this->page);
+		$this->setUserParam($params, "page_size", $this->pageSize);
+		$this->setUserParam($params, "query_order_type", $this->queryOrderType);
+		$this->setUserParam($params, "start_update_time", $this->startUpdateTime);
 
 	}
 
@@ -54,14 +60,14 @@ class PddDdkAllOrderListIncrementGetRequest extends PopBaseHttpRequest
 		return "pdd.ddk.all.order.list.increment.get";
 	}
 
-	public function setStartUpdateTime($startUpdateTime)
-	{
-		$this->startUpdateTime = $startUpdateTime;
-	}
-
 	public function setEndUpdateTime($endUpdateTime)
 	{
 		$this->endUpdateTime = $endUpdateTime;
+	}
+
+	public function setPage($page)
+	{
+		$this->page = $page;
 	}
 
 	public function setPageSize($pageSize)
@@ -69,9 +75,14 @@ class PddDdkAllOrderListIncrementGetRequest extends PopBaseHttpRequest
 		$this->pageSize = $pageSize;
 	}
 
-	public function setPage($page)
+	public function setQueryOrderType($queryOrderType)
 	{
-		$this->page = $page;
+		$this->queryOrderType = $queryOrderType;
+	}
+
+	public function setStartUpdateTime($startUpdateTime)
+	{
+		$this->startUpdateTime = $startUpdateTime;
 	}
 
 }

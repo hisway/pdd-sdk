@@ -16,6 +16,7 @@ $request->setLogisticsId(1);
 $request->setOrderSn('str');
 $request->setRefundAddressId('str');
 $request->setTrackingNumber('str');
+$request->setRedeliveryType(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

@@ -12,8 +12,6 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 $request = new PddDdkResourceUrlGenRequest();
 
 $request->setCustomParameters('str');
-$request->setGenerateQqApp(true);
-$request->setGenerateSchemaUrl(true);
 $request->setGenerateWeApp(true);
 $request->setPid('str');
 $request->setResourceType(1);

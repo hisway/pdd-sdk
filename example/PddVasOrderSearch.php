@@ -21,6 +21,7 @@ $request->setPageSize(1);
 $request->setPayTimeEnd(1);
 $request->setPayTimeStart(1);
 $request->setSkuId(1);
+$request->setRefundStatus(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

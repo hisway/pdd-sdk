@@ -16,11 +16,6 @@ class PddGoodsSkuPriceUpdateRequest extends PopBaseHttpRequest
 	private $goodsId;
 
 	/**
-	* @JsonProperty(List<\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsSkuPriceUpdateRequest_SkuPriceListItem>, "sku_price_list")
-	*/
-	private $skuPriceList;
-
-	/**
 	* @JsonProperty(Long, "market_price")
 	*/
 	private $marketPrice;
@@ -31,6 +26,11 @@ class PddGoodsSkuPriceUpdateRequest extends PopBaseHttpRequest
 	private $marketPriceInYuan;
 
 	/**
+	* @JsonProperty(List<\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsSkuPriceUpdateRequest_SkuPriceListItem>, "sku_price_list")
+	*/
+	private $skuPriceList;
+
+	/**
 	* @JsonProperty(Integer, "sync_goods_operate")
 	*/
 	private $syncGoodsOperate;
@@ -38,9 +38,9 @@ class PddGoodsSkuPriceUpdateRequest extends PopBaseHttpRequest
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "goods_id", $this->goodsId);
-		$this->setUserParam($params, "sku_price_list", $this->skuPriceList);
 		$this->setUserParam($params, "market_price", $this->marketPrice);
 		$this->setUserParam($params, "market_price_in_yuan", $this->marketPriceInYuan);
+		$this->setUserParam($params, "sku_price_list", $this->skuPriceList);
 		$this->setUserParam($params, "sync_goods_operate", $this->syncGoodsOperate);
 
 	}
@@ -65,11 +65,6 @@ class PddGoodsSkuPriceUpdateRequest extends PopBaseHttpRequest
 		$this->goodsId = $goodsId;
 	}
 
-	public function setSkuPriceList($skuPriceList)
-	{
-		$this->skuPriceList = $skuPriceList;
-	}
-
 	public function setMarketPrice($marketPrice)
 	{
 		$this->marketPrice = $marketPrice;
@@ -78,6 +73,11 @@ class PddGoodsSkuPriceUpdateRequest extends PopBaseHttpRequest
 	public function setMarketPriceInYuan($marketPriceInYuan)
 	{
 		$this->marketPriceInYuan = $marketPriceInYuan;
+	}
+
+	public function setSkuPriceList($skuPriceList)
+	{
+		$this->skuPriceList = $skuPriceList;
 	}
 
 	public function setSyncGoodsOperate($syncGoodsOperate)
@@ -96,6 +96,11 @@ class PddGoodsSkuPriceUpdateRequest_SkuPriceListItem extends PopBaseJsonEntity
 	}
 
 	/**
+	* @JsonProperty(Long, "group_price")
+	*/
+	private $groupPrice;
+
+	/**
 	* @JsonProperty(Integer, "is_onsale")
 	*/
 	private $isOnsale;
@@ -106,14 +111,14 @@ class PddGoodsSkuPriceUpdateRequest_SkuPriceListItem extends PopBaseJsonEntity
 	private $singlePrice;
 
 	/**
-	* @JsonProperty(Long, "group_price")
-	*/
-	private $groupPrice;
-
-	/**
 	* @JsonProperty(Long, "sku_id")
 	*/
 	private $skuId;
+
+	public function setGroupPrice($groupPrice)
+	{
+		$this->groupPrice = $groupPrice;
+	}
 
 	public function setIsOnsale($isOnsale)
 	{
@@ -123,11 +128,6 @@ class PddGoodsSkuPriceUpdateRequest_SkuPriceListItem extends PopBaseJsonEntity
 	public function setSinglePrice($singlePrice)
 	{
 		$this->singlePrice = $singlePrice;
-	}
-
-	public function setGroupPrice($groupPrice)
-	{
-		$this->groupPrice = $groupPrice;
 	}
 
 	public function setSkuId($skuId)

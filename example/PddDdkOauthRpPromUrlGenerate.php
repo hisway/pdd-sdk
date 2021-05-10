@@ -11,18 +11,17 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOauthRpPromUrlGenerateRequest();
 
+$request->setAmount(1);
 $request->setChannelType(1);
 $request->setCustomParameters('str');
+$request->setDiyLotteryParam();
+$request->setDiyRedPacketParam();
 $request->setGenerateQqApp(true);
 $request->setGenerateSchemaUrl(true);
 $request->setGenerateShortUrl(true);
-$request->setGenerateWeappWebview(true);
 $request->setGenerateWeApp(true);
 $request->setPIdList(array('str'));
-$request->setWeAppWebViewShortUrl(true);
-$request->setWeAppWebWiewUrl(true);
-$request->setDiyLotteryParam();
-$request->setDiyRedPacketParam();
+$request->setScratchCardAmount(1);
 try{
 	$response = $client->syncInvoke($request, Config::$accessToken);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

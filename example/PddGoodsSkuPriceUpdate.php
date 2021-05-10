@@ -12,9 +12,9 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 $request = new PddGoodsSkuPriceUpdateRequest();
 
 $request->setGoodsId(1);
-$request->setSkuPriceList();
 $request->setMarketPrice(1);
 $request->setMarketPriceInYuan('str');
+$request->setSkuPriceList();
 $request->setSyncGoodsOperate(1);
 try{
 	$response = $client->syncInvoke($request);

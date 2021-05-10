@@ -11,11 +11,13 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOrderListIncrementGetRequest();
 
-$request->setStartUpdateTime(1);
+$request->setCashGiftOrder(true);
 $request->setEndUpdateTime(1);
-$request->setPageSize(1);
 $request->setPage(1);
+$request->setPageSize(1);
+$request->setQueryOrderType(1);
 $request->setReturnCount(true);
+$request->setStartUpdateTime(1);
 try{
 	$response = $client->syncInvoke($request);
 } catch(Com\Pdd\Pop\Sdk\PopHttpException $e){

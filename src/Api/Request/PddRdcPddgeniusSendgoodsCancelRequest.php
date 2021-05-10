@@ -52,29 +52,9 @@ class PddRdcPddgeniusSendgoodsCancelRequest_Param extends PopBaseJsonEntity
 	}
 
 	/**
-	* @JsonProperty(Long, "operate_time")
+	* @JsonProperty(Integer, "fail_reason_code")
 	*/
-	private $operateTime;
-
-	/**
-	* @JsonProperty(String, "tid")
-	*/
-	private $tid;
-
-	/**
-	* @JsonProperty(String, "status")
-	*/
-	private $status;
-
-	/**
-	* @JsonProperty(Long, "refund_id")
-	*/
-	private $refundId;
-
-	/**
-	* @JsonProperty(Integer, "refund_fee")
-	*/
-	private $refundFee;
+	private $failReasonCode;
 
 	/**
 	* @JsonProperty(String, "msg")
@@ -82,33 +62,33 @@ class PddRdcPddgeniusSendgoodsCancelRequest_Param extends PopBaseJsonEntity
 	private $msg;
 
 	/**
-	* @JsonProperty(Integer, "fail_reason_code")
+	* @JsonProperty(Long, "operate_time")
 	*/
-	private $failReasonCode;
+	private $operateTime;
 
-	public function setOperateTime($operateTime)
-	{
-		$this->operateTime = $operateTime;
-	}
+	/**
+	* @JsonProperty(Integer, "refund_fee")
+	*/
+	private $refundFee;
 
-	public function setTid($tid)
-	{
-		$this->tid = $tid;
-	}
+	/**
+	* @JsonProperty(Long, "refund_id")
+	*/
+	private $refundId;
 
-	public function setStatus($status)
-	{
-		$this->status = $status;
-	}
+	/**
+	* @JsonProperty(String, "status")
+	*/
+	private $status;
 
-	public function setRefundId($refundId)
-	{
-		$this->refundId = $refundId;
-	}
+	/**
+	* @JsonProperty(String, "tid")
+	*/
+	private $tid;
 
-	public function setRefundFee($refundFee)
+	public function setFailReasonCode($failReasonCode)
 	{
-		$this->refundFee = $refundFee;
+		$this->failReasonCode = $failReasonCode;
 	}
 
 	public function setMsg($msg)
@@ -116,9 +96,29 @@ class PddRdcPddgeniusSendgoodsCancelRequest_Param extends PopBaseJsonEntity
 		$this->msg = $msg;
 	}
 
-	public function setFailReasonCode($failReasonCode)
+	public function setOperateTime($operateTime)
 	{
-		$this->failReasonCode = $failReasonCode;
+		$this->operateTime = $operateTime;
+	}
+
+	public function setRefundFee($refundFee)
+	{
+		$this->refundFee = $refundFee;
+	}
+
+	public function setRefundId($refundId)
+	{
+		$this->refundId = $refundId;
+	}
+
+	public function setStatus($status)
+	{
+		$this->status = $status;
+	}
+
+	public function setTid($tid)
+	{
+		$this->tid = $tid;
 	}
 
 }

@@ -40,6 +40,11 @@ class PddGoodsTemplatePropertyValueSearchRequest extends PopBaseHttpRequest
 	*/
 	private $value;
 
+	/**
+	* @JsonProperty(Long, "ref_pid")
+	*/
+	private $refPid;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "cat_id", $this->catId);
@@ -48,6 +53,7 @@ class PddGoodsTemplatePropertyValueSearchRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "parent_vid", $this->parentVid);
 		$this->setUserParam($params, "template_pid", $this->templatePid);
 		$this->setUserParam($params, "value", $this->value);
+		$this->setUserParam($params, "ref_pid", $this->refPid);
 
 	}
 
@@ -94,6 +100,11 @@ class PddGoodsTemplatePropertyValueSearchRequest extends PopBaseHttpRequest
 	public function setValue($value)
 	{
 		$this->value = $value;
+	}
+
+	public function setRefPid($refPid)
+	{
+		$this->refPid = $refPid;
 	}
 
 }

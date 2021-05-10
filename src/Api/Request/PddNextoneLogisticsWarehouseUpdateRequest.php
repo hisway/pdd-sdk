@@ -57,7 +57,7 @@ class PddNextoneLogisticsWarehouseUpdateRequest_Request extends PopBaseJsonEntit
 	private $afterSalesId;
 
 	/**
-	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddNextoneLogisticsWarehouseUpdateRequest_Void, "operate_time")
+	* @JsonProperty(Long, "operate_time")
 	*/
 	private $operateTime;
 

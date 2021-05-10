@@ -91,6 +91,16 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 	private $goodsProperties;
 
 	/**
+	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsAddRequest_GoodsTradeAttr, "goods_trade_attr")
+	*/
+	private $goodsTradeAttr;
+
+	/**
+	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsAddRequest_GoodsTravelAttr, "goods_travel_attr")
+	*/
+	private $goodsTravelAttr;
+
+	/**
 	* @JsonProperty(Integer, "goods_type")
 	*/
 	private $goodsType;
@@ -156,6 +166,16 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 	private $outGoodsId;
 
 	/**
+	* @JsonProperty(String, "out_source_goods_id")
+	*/
+	private $outSourceGoodsId;
+
+	/**
+	* @JsonProperty(Integer, "out_source_type")
+	*/
+	private $outSourceType;
+
+	/**
 	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsAddRequest_OverseaGoods, "oversea_goods")
 	*/
 	private $overseaGoods;
@@ -191,9 +211,19 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 	private $shipmentLimitSecond;
 
 	/**
+	* @JsonProperty(Long, "size_spec_id")
+	*/
+	private $sizeSpecId;
+
+	/**
 	* @JsonProperty(List<\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsAddRequest_SkuListItem>, "sku_list")
 	*/
 	private $skuList;
+
+	/**
+	* @JsonProperty(Integer, "sku_type")
+	*/
+	private $skuType;
 
 	/**
 	* @JsonProperty(String, "song_huo_an_zhuang")
@@ -225,6 +255,16 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 	*/
 	private $zhiHuanBuXiu;
 
+	/**
+	* @JsonProperty(Integer, "delivery_type")
+	*/
+	private $deliveryType;
+
+	/**
+	* @JsonProperty(Integer, "is_group_pre_sale")
+	*/
+	private $isGroupPreSale;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "bad_fruit_claim", $this->badFruitClaim);
@@ -243,6 +283,8 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "goods_desc", $this->goodsDesc);
 		$this->setUserParam($params, "goods_name", $this->goodsName);
 		$this->setUserParam($params, "goods_properties", $this->goodsProperties);
+		$this->setUserParam($params, "goods_trade_attr", $this->goodsTradeAttr);
+		$this->setUserParam($params, "goods_travel_attr", $this->goodsTravelAttr);
 		$this->setUserParam($params, "goods_type", $this->goodsType);
 		$this->setUserParam($params, "image_url", $this->imageUrl);
 		$this->setUserParam($params, "invoice_status", $this->invoiceStatus);
@@ -256,6 +298,8 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "order_limit", $this->orderLimit);
 		$this->setUserParam($params, "origin_country_id", $this->originCountryId);
 		$this->setUserParam($params, "out_goods_id", $this->outGoodsId);
+		$this->setUserParam($params, "out_source_goods_id", $this->outSourceGoodsId);
+		$this->setUserParam($params, "out_source_type", $this->outSourceType);
 		$this->setUserParam($params, "oversea_goods", $this->overseaGoods);
 		$this->setUserParam($params, "oversea_type", $this->overseaType);
 		$this->setUserParam($params, "pre_sale_time", $this->preSaleTime);
@@ -263,13 +307,17 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "second_hand", $this->secondHand);
 		$this->setUserParam($params, "shang_men_an_zhuang", $this->shangMenAnZhuang);
 		$this->setUserParam($params, "shipment_limit_second", $this->shipmentLimitSecond);
+		$this->setUserParam($params, "size_spec_id", $this->sizeSpecId);
 		$this->setUserParam($params, "sku_list", $this->skuList);
+		$this->setUserParam($params, "sku_type", $this->skuType);
 		$this->setUserParam($params, "song_huo_an_zhuang", $this->songHuoAnZhuang);
 		$this->setUserParam($params, "song_huo_ru_hu", $this->songHuoRuHu);
 		$this->setUserParam($params, "tiny_name", $this->tinyName);
 		$this->setUserParam($params, "warehouse", $this->warehouse);
 		$this->setUserParam($params, "warm_tips", $this->warmTips);
 		$this->setUserParam($params, "zhi_huan_bu_xiu", $this->zhiHuanBuXiu);
+		$this->setUserParam($params, "delivery_type", $this->deliveryType);
+		$this->setUserParam($params, "is_group_pre_sale", $this->isGroupPreSale);
 
 	}
 
@@ -368,6 +416,16 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 		$this->goodsProperties = $goodsProperties;
 	}
 
+	public function setGoodsTradeAttr($goodsTradeAttr)
+	{
+		$this->goodsTradeAttr = $goodsTradeAttr;
+	}
+
+	public function setGoodsTravelAttr($goodsTravelAttr)
+	{
+		$this->goodsTravelAttr = $goodsTravelAttr;
+	}
+
 	public function setGoodsType($goodsType)
 	{
 		$this->goodsType = $goodsType;
@@ -433,6 +491,16 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 		$this->outGoodsId = $outGoodsId;
 	}
 
+	public function setOutSourceGoodsId($outSourceGoodsId)
+	{
+		$this->outSourceGoodsId = $outSourceGoodsId;
+	}
+
+	public function setOutSourceType($outSourceType)
+	{
+		$this->outSourceType = $outSourceType;
+	}
+
 	public function setOverseaGoods($overseaGoods)
 	{
 		$this->overseaGoods = $overseaGoods;
@@ -468,9 +536,19 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 		$this->shipmentLimitSecond = $shipmentLimitSecond;
 	}
 
+	public function setSizeSpecId($sizeSpecId)
+	{
+		$this->sizeSpecId = $sizeSpecId;
+	}
+
 	public function setSkuList($skuList)
 	{
 		$this->skuList = $skuList;
+	}
+
+	public function setSkuType($skuType)
+	{
+		$this->skuType = $skuType;
 	}
 
 	public function setSongHuoAnZhuang($songHuoAnZhuang)
@@ -501,6 +579,16 @@ class PddGoodsAddRequest extends PopBaseHttpRequest
 	public function setZhiHuanBuXiu($zhiHuanBuXiu)
 	{
 		$this->zhiHuanBuXiu = $zhiHuanBuXiu;
+	}
+
+	public function setDeliveryType($deliveryType)
+	{
+		$this->deliveryType = $deliveryType;
+	}
+
+	public function setIsGroupPreSale($isGroupPreSale)
+	{
+		$this->isGroupPreSale = $isGroupPreSale;
 	}
 
 }
@@ -614,6 +702,11 @@ class PddGoodsAddRequest_GoodsPropertiesItem extends PopBaseJsonEntity
 	private $parentSpecId;
 
 	/**
+	* @JsonProperty(Long, "ref_pid")
+	*/
+	private $refPid;
+
+	/**
 	* @JsonProperty(Long, "spec_id")
 	*/
 	private $specId;
@@ -658,6 +751,11 @@ class PddGoodsAddRequest_GoodsPropertiesItem extends PopBaseJsonEntity
 		$this->parentSpecId = $parentSpecId;
 	}
 
+	public function setRefPid($refPid)
+	{
+		$this->refPid = $refPid;
+	}
+
 	public function setSpecId($specId)
 	{
 		$this->specId = $specId;
@@ -681,6 +779,96 @@ class PddGoodsAddRequest_GoodsPropertiesItem extends PopBaseJsonEntity
 	public function setVid($vid)
 	{
 		$this->vid = $vid;
+	}
+
+}
+
+class PddGoodsAddRequest_GoodsTradeAttr extends PopBaseJsonEntity
+{
+
+	public function __construct()
+	{
+
+	}
+
+	/**
+	* @JsonProperty(Integer, "advances_days")
+	*/
+	private $advancesDays;
+
+	/**
+	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsAddRequest_GoodsTradeAttrBookingNotes, "booking_notes")
+	*/
+	private $bookingNotes;
+
+	/**
+	* @JsonProperty(Integer, "life_span")
+	*/
+	private $lifeSpan;
+
+	public function setAdvancesDays($advancesDays)
+	{
+		$this->advancesDays = $advancesDays;
+	}
+
+	public function setBookingNotes($bookingNotes)
+	{
+		$this->bookingNotes = $bookingNotes;
+	}
+
+	public function setLifeSpan($lifeSpan)
+	{
+		$this->lifeSpan = $lifeSpan;
+	}
+
+}
+
+class PddGoodsAddRequest_GoodsTradeAttrBookingNotes extends PopBaseJsonEntity
+{
+
+	public function __construct()
+	{
+
+	}
+
+	/**
+	* @JsonProperty(String, "url")
+	*/
+	private $url;
+
+	public function setUrl($url)
+	{
+		$this->url = $url;
+	}
+
+}
+
+class PddGoodsAddRequest_GoodsTravelAttr extends PopBaseJsonEntity
+{
+
+	public function __construct()
+	{
+
+	}
+
+	/**
+	* @JsonProperty(Boolean, "need_tourist")
+	*/
+	private $needTourist;
+
+	/**
+	* @JsonProperty(Integer, "type")
+	*/
+	private $type;
+
+	public function setNeedTourist($needTourist)
+	{
+		$this->needTourist = $needTourist;
+	}
+
+	public function setType($type)
+	{
+		$this->type = $type;
 	}
 
 }
@@ -779,6 +967,11 @@ class PddGoodsAddRequest_SkuListItem extends PopBaseJsonEntity
 	private $outSkuSn;
 
 	/**
+	* @JsonProperty(String, "out_source_sku_id")
+	*/
+	private $outSourceSkuId;
+
+	/**
 	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsAddRequest_SkuListItemOverseaSku, "oversea_sku")
 	*/
 	private $overseaSku;
@@ -808,6 +1001,11 @@ class PddGoodsAddRequest_SkuListItem extends PopBaseJsonEntity
 	*/
 	private $weight;
 
+	/**
+	* @JsonProperty(List<\Com\Pdd\Pop\Sdk\Api\Request\PddGoodsAddRequest_SkuListItemSkuPropertiesItem>, "sku_properties")
+	*/
+	private $skuProperties;
+
 	public function setIsOnsale($isOnsale)
 	{
 		$this->isOnsale = $isOnsale;
@@ -831,6 +1029,11 @@ class PddGoodsAddRequest_SkuListItem extends PopBaseJsonEntity
 	public function setOutSkuSn($outSkuSn)
 	{
 		$this->outSkuSn = $outSkuSn;
+	}
+
+	public function setOutSourceSkuId($outSourceSkuId)
+	{
+		$this->outSourceSkuId = $outSourceSkuId;
 	}
 
 	public function setOverseaSku($overseaSku)
@@ -861,6 +1064,11 @@ class PddGoodsAddRequest_SkuListItem extends PopBaseJsonEntity
 	public function setWeight($weight)
 	{
 		$this->weight = $weight;
+	}
+
+	public function setSkuProperties($skuProperties)
+	{
+		$this->skuProperties = $skuProperties;
 	}
 
 }
@@ -901,6 +1109,56 @@ class PddGoodsAddRequest_SkuListItemOverseaSku extends PopBaseJsonEntity
 	public function setTaxation($taxation)
 	{
 		$this->taxation = $taxation;
+	}
+
+}
+
+class PddGoodsAddRequest_SkuListItemSkuPropertiesItem extends PopBaseJsonEntity
+{
+
+	public function __construct()
+	{
+
+	}
+
+	/**
+	* @JsonProperty(String, "punit")
+	*/
+	private $punit;
+
+	/**
+	* @JsonProperty(Long, "ref_pid")
+	*/
+	private $refPid;
+
+	/**
+	* @JsonProperty(String, "value")
+	*/
+	private $value;
+
+	/**
+	* @JsonProperty(Long, "vid")
+	*/
+	private $vid;
+
+	public function setPunit($punit)
+	{
+		$this->punit = $punit;
+	}
+
+	public function setRefPid($refPid)
+	{
+		$this->refPid = $refPid;
+	}
+
+	public function setValue($value)
+	{
+		$this->value = $value;
+	}
+
+	public function setVid($vid)
+	{
+		$this->vid = $vid;
 	}
 
 }

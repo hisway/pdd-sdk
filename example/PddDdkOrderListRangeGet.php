@@ -11,9 +11,11 @@ $client = new PopHttpClient(Config::$clientId, Config::$clientSecret);
 
 $request = new PddDdkOrderListRangeGetRequest();
 
+$request->setCashGiftOrder(true);
 $request->setEndTime('str');
 $request->setLastOrderId('str');
 $request->setPageSize(1);
+$request->setQueryOrderType(1);
 $request->setStartTime('str');
 try{
 	$response = $client->syncInvoke($request);
